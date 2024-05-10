@@ -1,0 +1,309 @@
+# dev-tools
+code:
+  name: "Visual Studio Code"
+  description: "Open source and general lightweight code editor"
+  version: "1.89.0"
+  installation-commands:
+    - "wget -O ./downloads/code_1.89.0-amd64.deb https://vscode.download.prss.microsoft.com/dbazure/download/stable/b58957e67ee1e712cebf466b995adf4c5307b2bd/code_1.89.0-1714530869_amd64.deb"
+    - "sudo apt install ./code_1.89.0-amd64.deb"
+    - "sudo apt install apt-transport-https"
+    - "sudo apt update"
+    - "sudo apt install code -y"
+  category: "dev-tools"
+  uninstall: "sudo apt-get remove code"
+  dependencies: []
+
+dbeaver:
+  name: "DBeaver Community Edition"
+  description: "Free and open source universal database tool for developers and database administrators."
+  version: "latest"
+  installation-commands:
+    - "wget -O ./downloads/dbeaver-ce_latest_amd64.deb https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
+    - "sudo apt-get install ./downloads/dbeaver-ce_latest_amd64.deb"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt-get remove dbeaver-ce"
+
+meld:
+  name: "Meld"
+  description: "Meld helps you compare files, directories, and version controlled projects."
+  version: "latest"
+  installation-commands:
+    - "sudo apt-get install meld -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt-get remove meld -y"
+
+mongoDB:
+  name: "Mongo Database"
+  description: "A document database with the scalability and flexibility that you want with the querying and indexing that you need."
+  version: "latest"
+  installation-commands:
+    - "curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor"
+    - 'echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list'
+    - "sudo apt-get update"
+    - "sudo apt-get install -y mongodb-org"
+    - "sudo systemctl start mongod"
+    - "sudo systemctl daemon-reload"
+  category: "dev-tools"
+  uninstall:
+    - "sudo service mongod stop"
+    - "sudo apt-get purge mongodb-org* -y"
+    - "sudo rm -r /var/log/mongodb /var/lib/mongodb"
+
+nodejs:
+  name: "Node JS"
+  description: "A JavaScript runtime for server-side programming."
+  version: "latest"
+  installation-commands:
+    - "sudo apt-get install -y nodejs"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt-get remove nodejs -y"
+
+mongoDB_compass:
+  name: "Mongo Compass"
+  description: "A powerful GUI for querying, aggregating, and analyzing your MongoDB data in a visual environment."
+  version: "latest"
+  installation-commands:
+    - "wget -O ./downloads/mongodb-compass_1.43.0_amd64.deb https://downloads.mongodb.com/compass/mongodb-compass_1.43.0_amd64.deb"
+    - "sudo dpkg -i mongodb-compass_1.43.0_amd64.deb"
+  category: "dev-tools"
+  uninstall:
+    - "sudo dpkg --remove mongodb-compass"
+
+postman:
+  name: "Postman"
+  description: "An API platform for building and using APIs."
+  version: "latest"
+  installation-commands:
+    - "sudo snap install postman"
+  category: "dev-tools"
+  uninstall:
+    - "sudo snap remove postman"
+
+mysql:
+  name: "MySQL"
+  description: "A popular and powerful database that powers many of the world's most accessed applications, including Facebook, Twitter, Netflix, and Airbnb."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install mysql-server -y"
+    - "sudo service mysql status"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt-get purge mysql-server -y"
+
+atom:
+  name: "Atom"
+  description: "A free and open-source text and source code editor developed by GitHub."
+  version: "latest"
+  installation-commands:
+    - "sudo snap install atom --classic"
+  category: "dev-tools"
+  uninstall:
+    - "sudo snap remove atom"
+
+java_openjdk_11:
+  name: "Java JDK 11"
+  description: "Java programming language version 11"
+  version: "11"
+  installation-commands:
+    - "sudo apt-get install openjdk-11-jdk -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove openjdk-11-jdk -y"
+
+java_openjdk_17:
+  name: "Java JDK 17"
+  description: "Java programming language version 17"
+  version: "17"
+  installation-commands:
+    - "sudo apt-get install openjdk-17-jdk -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove openjdk-17-jdk -y"
+
+maven:
+  name: "Apache Maven"
+  description: "Open-source build tool developed by the Apache Group to build, publish, and deploy java projects."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install maven -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove maven -y"
+
+git_gui:
+  name: "Git GUI"
+  description: "Provides a GUI to git, making it easier for a user to visualize branches and commit history."
+  version: "latest"
+  installation-commands:
+    - "sudo apt-get install git-gui -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove git-gui -y"
+
+intelliJ:
+  name: "IntelliJ IDEA Community Edition"
+  description: "Integrated Development Environment (IDE) for Java."
+  version: "latest"
+  installation-commands:
+    - "sudo snap install intellij-idea-community --classic"
+  category: "dev-tools"
+  uninstall:
+    - "sudo snap remove intellij-idea-community"
+
+git:
+  name: "Git"
+  description: "A free and open source distributed version control system."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install git -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove git -y"
+
+pip3:
+  name: "Python 3 Pip"
+  description: "A command line tool for installing Python 3 modules."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install python3-pip -y"
+  category: "dev-tools"
+  uninstall:
+    - "sudo apt remove python3-pip -y"
+
+#################################################################################################
+
+# browsers
+brave:
+  name: "Brave web browser"
+  description: "Brave browser blocks ads and trackers that slow you down and invade your privacy."
+  version: "latest"
+  installation-commands:
+    - "sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg"
+    - 'echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list'
+    - "sudo apt update"
+    - "sudo apt install brave-browser -y"
+  category: "Browser"
+  uninstall:
+    - "sudo apt remove brave-browser brave-keyring"
+    - "sudo rm /etc/apt/sources.list.d/brave-browser-*.list"
+
+#################################################################################################
+
+# communication
+discord:
+  name: "Discord"
+  description: "A voice, video, and text chat app that's used by tens of millions"
+  version: "latest"
+  installation-commands:
+    - "wget https://dl.discordapp.net/apps/linux/0.0.53/discord-0.0.53.deb"
+    - "sudo apt install ./discord-0.0.53.deb"
+  category: "communication"
+  uninstall:
+    - "sudo apt-get remove discord"
+
+telegram:
+  name: "Telegram"
+  description: "A messaging app with a focus on speed and security,"
+  version: "latest"
+  installation-commands:
+    - "sudo apt install telegram-desktop -y"
+  category: "communication"
+  uninstall:
+    - "sudo apt remove telegram -y"
+
+#################################################################################################
+
+obsidian:
+  name: "Obsidian"
+  description: "A private and flexible writing app that adapts to the way you think."
+  version: "latest"
+  installation-commands:
+    - "sudo snap install obsidian --classic"
+  category: "utils"
+  uninstall:
+    - "sudo snap remove obsidian"
+
+gparted:
+  name: "gparted"
+  description: "A free partition editor for graphically managing your disk."
+  version: "latest"
+  installation-commands:
+    - "sudo apt-get install gparted"
+  category: "utils"
+  uninstall:
+    - "sudo apt remove gparted"
+
+terminator:
+  name: "Terminator"
+  description: "An open-source terminal emulator programmed in Java"
+  version: "latest"
+  installation-commands:
+    - "sudo apt-get install terminator -y"
+  category: "utils"
+  uninstall:
+    - "sudo apt-get remove terminator"
+
+flameshot:
+  name: "Flameshot"
+  description: "A powerful, simple to use screenshot software."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install flameshot -y"
+  category: "utils"
+  uninstall:
+    - "sudo apt remove flameshot -y"
+
+obs:
+  name: "OBS Studio"
+  description: "Free and open source software for video recording and live streaming."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install -y ffmpeg"
+    - "sudo add-apt-repository ppa:obsproject/obs-studio"
+    - "sudo apt update"
+    - "sudo apt install obs-studio -y"
+  category: "utils"
+  uninstall:
+    - "sudo apt remove obs-studio -y"
+
+#################################################################################################
+
+# networking
+net-tools:
+  name: "net-tools"
+  description: "Enable ifconfig command."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install net-tools -y"
+  category: "networking"
+  uninstall:
+    - "sudo apt remove net-tools -y"
+
+#################################################################################################
+
+# virtualization
+vbox:
+  name: "Oracle VirtualBox"
+  description: "A powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use."
+  version: "latest"
+  installation-commands:
+    - "sudo apt install virtualbox -y"
+  category: "virtualization"
+  uninstall:
+    - "sudo apt remove virtualbox -y"
+
+#################################################################################################
+
+# media
+vlc:
+  name: "Oracle VirtualBox"
+  description: "A free and open source cross-platform multimedia player."
+  version: "latest"
+  installation-commands:
+    - "sudo snap install vlc"
+  category: "virtualization"
+  uninstall:
+    - "sudo nap remove vlc"
